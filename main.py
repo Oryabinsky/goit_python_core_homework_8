@@ -1,4 +1,4 @@
-'''Python module for working with dates and times.'''
+'''Module for working with dates and times.'''
 from datetime import date, datetime
 
 
