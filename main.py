@@ -4,7 +4,7 @@ from datetime import date, datetime
 
 def get_birthdays_per_week(users: dict) -> dict:
     '''
-    Function to display a list of colleagues who need 
+    Function to display a list of colleagues who need
     to be congratulated on their birthday for the week.
     '''
     today = date.today()
@@ -34,15 +34,16 @@ def get_birthdays_per_week(users: dict) -> dict:
         if 0 <= delta_days_next_year <= 7:
             day_of_week = birthday_next_year.strftime('%A')
 
-        if day_of_week is not None :
+        if day_of_week is not None:
             if day_of_week == 'Saturday' or day_of_week == 'Sunday':
                 day_of_week = 'Monday'
             birthdays_per_week[day_of_week].append(name)
 
     # regenerate dict without empty days
-    birthdays_per_week = {day: names for day, names in birthdays_per_week.items() if names}
+    birthdays = {day: names for day, names in
+                 birthdays_per_week.items() if names}
 
-    return birthdays_per_week
+    return birthdays
 
 
 if __name__ == "__main__":
